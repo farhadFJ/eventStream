@@ -15,28 +15,7 @@
                         @csrf
                         @method('PUT')
 
-                        @php
-                            $fields = [
-                                'name' => 'Name',
-                                'phone_number' => 'Phone Number',
-                                'country' => 'Country',
-                                'city' => 'City',
-                                'street' => 'Street',
-                                'postal_code' => 'Postal Code'
-                            ];
-                        @endphp
-
-                        @foreach ($fields as $field => $label)
-                            <div class="mb-4">
-                                <label for="{{ $field }}" class="block text-gray-700 dark:text-gray-300">{{ $label }}</label>
-                                <input id="{{ $field }}" type="text" name="{{ $field }}" class="form-input mt-1 block w-full rounded-md shadow-sm{{ $errors->has($field) ? ' border-red-500' : ' border-gray-300' }}" value="{{ old($field, $company->$field) }}">
-                                @if ($errors->has($field))
-                                    <span class="text-red-500 text-sm mt-2" role="alert">
-                                        <strong>{{ $errors->first($field) }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        @endforeach
+                       @include('company.form')
 
                         <button type="submit" class="flex items-center justify-center h-10 px-6 mt-6 text-lg font-medium text-white transition-colors duration-150 bg-green-600 rounded-full shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50" dusk="submit-button">
                             <i class="fas fa-save mr-2"></i> @lang('Update Company')

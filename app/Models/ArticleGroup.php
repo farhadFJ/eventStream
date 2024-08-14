@@ -18,4 +18,8 @@ class ArticleGroup extends Model
     {
         return $this->belongsTo(Company::class, 'company_id');
     }
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'article_group_id');
+    }
 }

@@ -74,8 +74,14 @@ class ArticleGroupsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(ArticleGroup $articleGroup)
     {
-        //
+        // Überprüfen, ob es Artikel gibt, die mit dieser Artikelgruppe verknüpft sind
+        if ($articleGroup->articles()->exists()) {
+            return redirect()->route('articleGroups.index')->with('error', 'Article group cannot be deleted because it is used in articles');
+        } else {
+            $articleGroup->delete();
+            return redirect()->route('articleGroups.index')->with('success', 'Article group deleted successfully');
+        }
     }
 }
