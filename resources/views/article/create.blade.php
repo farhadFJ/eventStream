@@ -2,22 +2,18 @@
 
 @section('header')
     <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-        {{ __('Create Article Group') }}
+        {{ __('Create Article') }}
     </h2>
 @endsection
 
 @section('content')
-<<<<<<< HEAD
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-=======
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-4">
->>>>>>> create-article
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6">
-            <form action="{{ route('articleGroups.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @include('articleGroup.form')
+                @include('article.form')
                 <button type="submit" class="flex items-center justify-center h-10 px-6 mt-6 text-lg font-medium text-white transition-colors duration-150 bg-green-600 rounded-full shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50" dusk="submit-button">
-                    <i class="fas fa-plus mr-2"></i> @lang('Create Article Group')
+                    <i class="fas fa-plus mr-2"></i> @lang('Create Article')
                 </button>
             </form>
         </div>

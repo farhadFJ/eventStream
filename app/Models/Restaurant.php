@@ -21,4 +21,11 @@ class Restaurant extends Model
     {
         return $this->belongsTo(Company::class, 'company_id');
     }
+<<<<<<< HEAD
+=======
+    public function articles()
+    {
+        return $this->hasMany(Article::class, 'restaurant_id');
+    }
+>>>>>>> create-article
 }
