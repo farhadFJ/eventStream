@@ -13,11 +13,7 @@
 
 @keyframes moveIn {
     0% {
-<<<<<<< HEAD
-        transform: translateY(-100%);
-=======
         transform: translateY(-5%);
->>>>>>> create-article
         opacity: 0;
     }
     100% {

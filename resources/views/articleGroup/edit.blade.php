@@ -14,7 +14,7 @@
                     <form action="{{ route('articleGroups.update', $articleGroup->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-<<<<<<< HEAD
+
 
                         @php
                             $fields = [
@@ -33,7 +33,6 @@
                                 @endif
                             </div>
                         @endforeach
-=======
                         <div class="space-y-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">@lang('Article Group Name')</label>
@@ -43,7 +42,6 @@
                                 @enderror
                             </div>
                         </div>
->>>>>>> create-article
 
                         <button type="submit" class="flex items-center justify-center h-10 px-6 mt-6 text-lg font-medium text-white transition-colors duration-150 bg-green-600 rounded-full shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50" dusk="submit-button">
                             <i class="fas fa-save mr-2"></i> @lang('Update ArticleGroup')

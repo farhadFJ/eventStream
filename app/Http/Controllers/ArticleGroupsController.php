@@ -74,11 +74,6 @@ class ArticleGroupsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-<<<<<<< HEAD
-    public function destroy(string $id)
-    {
-        //
-=======
     public function destroy(ArticleGroup $articleGroup)
     {
         // Überprüfen, ob es Artikel gibt, die mit dieser Artikelgruppe verknüpft sind
@@ -88,6 +83,6 @@ class ArticleGroupsController extends Controller
             $articleGroup->delete();
             return redirect()->route('articleGroups.index')->with('success', 'Article group deleted successfully');
         }
->>>>>>> create-article
+
     }
 }

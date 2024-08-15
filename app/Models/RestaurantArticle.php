@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class RestaurantArticle extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
-=======
+
 
     protected $fillable = [
         'restaurant_id',
@@ -32,5 +31,5 @@ class RestaurantArticle extends Model
     }
 
 
->>>>>>> create-article
+
 }

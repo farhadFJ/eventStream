@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /vendor/
 node_modules/
 npm-debug.log
@@ -22,8 +21,6 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
-=======
->>>>>>> create-article
 /.phpunit.cache
 /node_modules
 /public/build
@@ -31,7 +28,6 @@ Homestead.json
 /public/storage
 /storage/*.key
 /vendor
-<<<<<<< HEAD
 .env.backup
 .env.production
 .phpactor.json
@@ -39,19 +35,3 @@ auth.json
 /.fleet
 /.idea
 /.vscode
-
-=======
-.env
-.env.backup
-.env.production
-.phpactor.json
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-auth.json
-npm-debug.log
-yarn-error.log
-/.fleet
-/.idea
-/.vscode
->>>>>>> create-article

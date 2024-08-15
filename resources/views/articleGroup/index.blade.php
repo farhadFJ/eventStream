@@ -31,7 +31,6 @@
                                             <a href="{{ route('articleGroups.edit', $articleGroup->id) }}" class="text-blue-600 dark:text-blue-400 hover:underline">
                                                 <i class="fas fa-edit mr-1"></i>
                                             </a>
-<<<<<<< HEAD
 
 {{--                                            <form action="{{ route('restaurants.destroy', $restaurant->id) }}" method="POST" class="inline-block ml-2">--}}
 {{--                                                @csrf--}}
@@ -41,7 +40,6 @@
 {{--                                                </button>--}}
 {{--                                            </form>--}}
 
-=======
                                             <form action="{{ route('articleGroups.destroy', $articleGroup->id) }}" method="POST" class="inline-block ml-2">
                                                 @csrf
                                                 @method('DELETE')
@@ -49,7 +47,6 @@
                                                     <i class="fas fa-trash-alt mr-1"></i>
                                                 </button>
                                             </form>
->>>>>>> create-article
                                         </td>
                                     </tr>
                                 @endforeach

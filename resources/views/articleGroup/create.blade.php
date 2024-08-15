@@ -7,11 +7,8 @@
 @endsection
 
 @section('content')
-<<<<<<< HEAD
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-=======
+
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-4">
->>>>>>> create-article
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6">
             <form action="{{ route('articleGroups.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf

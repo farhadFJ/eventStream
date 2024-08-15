@@ -14,10 +14,7 @@
                     <form action="{{ route('restaurants.update', $restaurant->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-<<<<<<< HEAD
 
-=======
->>>>>>> create-article
                         @php
                             $fields = [
                                 'name' => 'Restaurant Name',
@@ -31,11 +28,8 @@
                         @foreach ($fields as $field => $label)
                             <div class="mb-4">
                                 <label for="{{ $field }}" class="block text-gray-700 dark:text-gray-300">{{ $label }}</label>
-<<<<<<< HEAD
                                 <input id="{{ $field }}" type="text" name="{{ $field }}" class="form-input mt-1 block w-full rounded-md shadow-sm{{ $errors->has($field) ? ' border-red-500' : ' border-gray-300' }}" value="{{ old($field, $restaurant->$field) }}">
-=======
                                 <input id="{{ $field }}" type="text" name="{{ $field }}" class="mt-1 block w-full rounded-md shadow-sm form-select dark:bg-gray-700 dark:text-gray-300{{ $errors->has($field) ? ' border-red-500' : ' border-gray-300' }}" value="{{ old($field, $restaurant->$field) }}">
->>>>>>> create-article
                                 @if ($errors->has($field))
                                     <span class="text-red-500 text-sm mt-2" role="alert">
                                         <strong>{{ $errors->first($field) }}</strong>
