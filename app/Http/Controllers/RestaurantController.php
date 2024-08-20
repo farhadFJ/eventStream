@@ -38,7 +38,6 @@ class RestaurantController extends Controller
         $restaurant->restaurant_tel = $request->get('restaurant_tel');
         $restaurant->restaurant_email = $request->get('restaurant_email');
         $restaurant->opening_hours = $request->get('opening_hours');
-        $restaurant->opening_hours = $request->get('opening_hours');
         if (Auth::user()->company) {
             $restaurant->company_id = Auth::user()->company->id;
         } else {

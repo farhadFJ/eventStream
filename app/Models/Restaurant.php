@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\AgeCategory;
-use App\ArticleAllotment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -26,4 +24,9 @@ class Restaurant extends Model
     {
         return $this->hasMany(Article::class, 'restaurant_id');
     }
+    public function articleallotment()
+    {
+        return $this->belongsToMany(Article::class, 'restaurant_articles');
+    }
+
 }
