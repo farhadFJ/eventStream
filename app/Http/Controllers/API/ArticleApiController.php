@@ -45,12 +45,4 @@ class ArticleApiController extends Controller
         return response()->json($article, 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy($id)
-    {
-        Article::destroy($id);
-        return response()->json(null, 204);
-    }
 }

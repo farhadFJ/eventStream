@@ -17,7 +17,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('/companies',CompanyApiController::class);
     Route::apiResource('/articleGroups',ArticleGroupApiController::class);
     Route::apiResource('/restaurants',RestaurantApiController::class);
-    Route::post('/restaurant/{restaurant}/allocate-articles',[RestaurantApiController::class,'allocateArticles']);
+    Route::post('/restaurant/{restaurantId}/allocate-articles',[RestaurantApiController::class,'allocateArticles']);
     Route::apiResource('/articles',ArticleApiController::class);
 
 

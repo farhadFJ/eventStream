@@ -24,9 +24,5 @@ class Restaurant extends Model
     {
         return $this->hasMany(Article::class, 'restaurant_id');
     }
-    public function articleallotment()
-    {
-        return $this->belongsToMany(Article::class, 'restaurant_articles');
-    }
 
 }
