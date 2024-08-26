@@ -6,11 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\Restaurant;
 use App\Models\RestaurantArticle;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class RestaurantApiController extends Controller
 {
-    public function allocateArticles($restaurantId): \Illuminate\Http\JsonResponse
+    public function getRestaurants(): JsonResponse
+    {
+        return response()->json(Restaurant::all());
+    }
+    public function allocateArticles($restaurantId): JsonResponse
     {
         return response()->json(Article::query()
             ->whereIn('id', RestaurantArticle::query()
