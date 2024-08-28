@@ -25,6 +25,9 @@ class ArticleEditRequest extends FormRequest
         return [
             'name' => 'required|string',
             'price' => 'required|numeric|min:-10000.00',
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // max 2MB,
+            'articleGroup' => 'required|exists:article_groups,id',
         ];
     }
 }

@@ -13,7 +13,7 @@ class Article extends Model
 {
     use softDeletes;
 
-    protected $fillable = ['name', 'price' , 'article_group_id'];
+    protected $fillable = ['name', 'price' , 'image', 'description','article_group_id'];
 
     public function group()
     {

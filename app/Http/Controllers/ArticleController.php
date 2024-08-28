@@ -8,6 +8,7 @@ use App\Http\Requests\restaurant\RestaurantCreateRequest;
 use App\Models\Article;
 use App\Models\ArticleGroup;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -25,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $articleGroups = Articlegroup::all();
+        $articleGroups = ArticleGroup::all();
         return view('article.create', compact('articleGroups'));
     }
 
@@ -38,7 +39,14 @@ class ArticleController extends Controller
         $article->id = $request->get('id');
         $article->name = $request->get('name');
         $article->price = $request->get('price');
+        $article->description = $request->get('description');
         $article->article_group_id = $request->get('articleGroup');
+        // Bild hochladen und speichern
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $article->image = $imagePath;
+        }
+
         $article->save();
 
         return redirect()->route('articles.index')->with('success', 'Article created successfully');
@@ -58,7 +66,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::query()->findOrFail($id);
-        $articleGroups = Articlegroup::all();
+        $articleGroups = ArticleGroup::all();
         return view('article.edit', compact('article','articleGroups'));
     }
 
@@ -69,7 +77,20 @@ class ArticleController extends Controller
     {
         $article->name = $request->get('name');
         $article->price = $request->get('price');
+        $article->description = $request->get('description');
         $article->article_group_id = $request->get('articleGroup');
+
+        if ($request->hasFile('image')) {
+            // Lösche das alte Bild, falls vorhanden
+            if ($article->image) {
+                Storage::disk('public')->delete($article->image);
+            }
+
+            // Speichere das neue Bild
+            $imagePath = $request->file('image')->store('images', 'public');
+            $article->image = $imagePath;
+        }
+
         $article->save();
 
         return redirect()->route('articles.index')->with('success', 'Article updated successfully');

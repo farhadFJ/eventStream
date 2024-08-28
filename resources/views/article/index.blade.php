@@ -20,6 +20,8 @@
                                 <th class="px-6 py-3 text-left text-sm font-medium uppercase">Article</th>
                                 <th class="px-6 py-3 text-left text-sm font-medium uppercase">Article Group</th>
                                 <th class="px-6 py-3 text-left text-sm font-medium uppercase">Price</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium uppercase">Description</th>
+                                <th class="px-6 py-3 text-left text-sm font-medium uppercase">Image</th>
                                 <th class="px-6 py-3 text-left text-sm font-medium uppercase">Actions</th>
                             </tr>
                             </thead>
@@ -31,6 +33,8 @@
                                         <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">{{ $article->name }}</td>
                                         <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">{{ $article->group->name }}</td>
                                         <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">{{ $article->price }}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">{{ $article->description }}</td>
+                                        <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400"><img src="{{ asset('storage/' . $article->image) }}" alt="{{ $article->name }}" class="h-24"></td>
                                         <td class="px-6 py-4 text-sm">
                                             <a href="{{ route('articles.edit', $article->id) }}" class="text-blue-600 dark:text-blue-400 hover:underline">
                                                 <i class="fas fa-edit mr-1"></i>
