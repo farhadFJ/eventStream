@@ -16,10 +16,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout',[AuthApiController::class, 'logout']);
 
     Route::post('/companies/getCompanies', [CompanyApiController::class, 'getCompanies']);
-    Route::post('articleGroups/getArticleGroups', [ArticleGroupApiController::class, 'getArticleGroups']);
-    Route::post('/restaurants/getRestaurants', [RestaurantApiController::class, 'getRestaurants']);
-    Route::post('/restaurant/{restaurantId}/allocate-articles',[RestaurantApiController::class,'allocateArticles']);
-    Route::post('/articles/getArticles',[ArticleApiController::class,'getArticles']);
-
 
 });
+Route::post('articleGroups/getArticleGroups', [ArticleGroupApiController::class, 'getArticleGroups']);
+Route::post('/restaurants/getRestaurants', [RestaurantApiController::class, 'getRestaurants']);
+Route::post('/restaurant/{restaurantId}/allocate-articles',[RestaurantApiController::class,'allocateArticles']);
+Route::post('/articles/getArticles',[ArticleApiController::class,'getArticles']);
